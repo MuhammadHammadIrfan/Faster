@@ -3,13 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-body,
-html {
+body{
     width: 100%;
     min-height: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1000;
 }
 nav{
     width: 100vw;
@@ -50,6 +51,9 @@ nav img:hover{
     cursor: pointer;
     transform: translateY(-5px);
 }
+nav .sign-up{
+    margin-right: 25px;
+}
 
 .hero{
     display: flex;
@@ -74,11 +78,37 @@ nav img:hover{
     width: 100%;
 }
 
-.hero-content h1, p {
+.hero-content h1 {
     color: rgb(116, 16, 16);
     font-size: 50px;
     margin-top: 20px;
     align-self: center;
+}
+.hero-content p {
+    color: rgb(116, 16, 16);
+    font-size: 50px;
+    margin-top: 20px;
+    align-self: center;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid rgb(116, 16, 16);
+    animation: typing 3s steps(30) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
 }
 .hero-content .action-btn{
     border: none;
